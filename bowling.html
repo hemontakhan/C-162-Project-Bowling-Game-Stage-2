@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<htmL>
+<head>
+ <title>BOWLING IN THE VIRTUAL WORLD</title>
+ <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+ <script src="./js/bowlingBall.js"></script>
+</head>
+<body>
+<a-scene id="scene">
+<a-sky src="eternity.png"></a-sky>
+
+<!--Assets-->
+<a-assets>
+<a-asset-item id="bowling-pin" src="./bowling_pin/scene.gltf"></a-asset-item>
+</a-assets>
+
+<a-entity light="type: ambient;color: white; intensity:3"></a-entity>
+
+<a-entity
+ id="camera"
+ camera
+ position="0 1.9 0"
+ wasd-controls
+ look-controls="pointerLockEnabled : false"
+>
+<a-cursor color="orange"></a-cursor>
+</a-entity>
+
+<a-entity bowling-ball></a-entity>
+
+<a-plane 
+ id="bowling-mat"
+ position="0 1.3 0"
+ rotation="-90 0 0"
+ width="25"
+ height="150"
+ color="black"
+ visible="true"
+ static-body
+></a-plane>
+
+<a-cylinder
+ position="4 1.4 -1"
+ height="15"
+ radius="0.4"
+ rotation="-90 0 0"
+ color="red"
+></a-cylinder>
+
+<a-cylinder
+ position="-4 1.4 -1"
+ height="15"
+ radius="0.4"
+ rotation="-90 0 0"
+ color="red"
+></a-cylinder>
+
+<!--Wall-->
+<a-box 
+position="4 1.4 -10"
+height="10"
+width="2"
+rotation="0 0 0"
+color="black"
+static-body
+></a-box>
+
+<a-box 
+position="-4 1.4 -10"
+height="10"
+width="2"
+rotation="0 0 0"
+color="black"
+static-body
+></a-box>
+
+<a-box 
+position="0 7 -9"
+height="5"
+width="10"
+rotation="90 0 0"
+color="black"
+static-body
+></a-box>
+
+<a-plane
+ position="0 1.4 -10"
+ height="10"
+ width="10"
+ color="cyan"
+ static-body
+></a-plane>
+
+<!--Bowling Pins-->
+<a-entity id="bowling-pin"   position="0 1.7 -2"  gltf-model = '#bowling-pin'  dynamic-body></a-entity>
+<!--Right Side Pins-->
+<a-entity id="bowling-pin" position="0.1 1.7 -3"  gltf-model = '#bowling-pin' dynamic-body></a-entity>
+<a-entity id="bowling-pin" position="0.2 1.7 -3.2"  gltf-model = '#bowling-pin' dynamic-body></a-entity>
+<a-entity id="bowling-pin" position="0.3 1.7 -3.4"  gltf-model = '#bowling-pin' dynamic-body></a-entity>
+<!--Left Side pins-->
+<a-entity id="bowling-pin" position="-0.1 1.7 -3"  gltf-model = '#bowling-pin' dynamic-body></a-entity>
+<a-entity id="bowling-pin" position="-0.2 1.7 -3.2"  gltf-model = '#bowling-pin' dynamic-body></a-entity>
+<a-entity id="bowling-pin" position="-0.3 1.7 -3.4"  gltf-model = '#bowling-pin' dynamic-body></a-entity>
+</a-scene>
+</body>
+</htmL>
